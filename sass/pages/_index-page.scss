@@ -1,0 +1,193 @@
+@use '../base';
+
+.carousel-wrapper{
+  display: flex;
+  margin:15px 0;
+
+  .carousel{
+    display: flex;
+    margin-right: 17px;
+    overflow: hidden;
+    width: 714px;
+
+    a{
+      text-decoration: none;
+      display: inline-block;
+
+      img{
+        max-width: inherit;
+      }
+    }
+  }
+}
+
+.content-wrapper{
+  display: flex;
+
+  aside{
+    flex-basis: 190px;
+    margin-right: 10px;
+    border: base.$page-border;
+
+    &>div{
+      background: linear-gradient(0.0deg, #79b260 0%, #92d774 100%);
+      padding: 5px 20px;
+      color:#fff;
+      font-weight: 600;
+    }
+    &>h3{
+      padding: 10px 20px;
+      font-size: 25px;
+      color: #6b6969;
+    }
+
+    nav{
+      padding: 10px 20px;
+
+      ul li ul li{
+        transition: transform .3s; /* Animation */
+        &:hover{
+          transform: scale(1.2);
+        }
+      }
+      li{
+        border-bottom: base.$page-border;
+        padding: 2px 0;
+        font-size: 17px;
+        font-weight: 600;
+
+        div{
+          padding: 10px 0;
+        }
+        a{
+          text-decoration: none;
+          color: #555454;
+          font-size: 15px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  .content{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width:800px;
+  }
+
+  .content-categories{
+    display: flex;
+
+    li{
+      @include base.list-reset;
+      background: linear-gradient(0.0deg, rgba(0,0,0,0.07) 0%, rgba(255,255,255,0.07) 100%);
+      padding: 10px 20px;
+      border: 1px solid rgba(0,0,1,0.15);
+
+      a{
+        text-decoration: none;
+        color:#6b6969;
+      }
+
+      &.active, &:hover{
+        background: #fff;
+        border-bottom: none;
+      }
+    }
+
+    li:last-child{
+      background: none;
+      border: none;
+      border-bottom: base.$page-border;
+      flex-grow: 1;
+    }
+  }
+
+  .books-wrapper{
+    border-bottom: base.$page-border;
+    border-left: base.$page-border;
+    border-right: base.$page-border;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    .books{
+      display: flex;
+      flex-wrap: wrap;
+
+      li{
+        width: 159px;
+        padding: 15px 10px;
+        transition: transform .3s; /* Animation */
+
+        &:hover{
+          //box-shadow: 0 0 0 2px #d0d0d0;
+          transform: scale(1.1);
+          background: #fff;
+          box-shadow: 5px 5px 15px 5px #d0d0d0;
+        }
+
+        article{
+          text-align: center;
+        }
+        h4{
+          text-align: center;
+          min-height: 43px;
+          overflow: hidden;
+          word-break: break-all;
+        }
+        .book-price{
+          text-align: center;
+          font-size: 22px;
+          color: #f05356;
+          font-weight: 800;
+        }
+
+        a{
+          position: relative;
+          display: inline-block;
+
+          .discount{
+            position:absolute;
+            right: -10px;
+            border-radius: 25px;
+            width: 50px;
+            height: 50px;
+            color: #fff;
+            background-color: #f05356;
+            text-align: center;
+            font-weight: 900;
+            font-size: 19px;
+            line-height: 1;
+            padding-top: 5px;
+          }
+        }
+      }
+    }
+  }
+  .pagination-wrapper{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 25px;
+    margin-top: auto;
+
+    .paginator-list{
+      li{
+        list-style: none;
+        display: inline-block;
+        padding: 5px 10px;
+        font-size: 16px;
+
+        a{
+          text-decoration: none;
+          color: #646464;
+        }
+
+        &.active{
+          border: base.$page-border;
+          border-bottom: 4px solid #79b260;
+        }
+      }
+    }
+  }
+}

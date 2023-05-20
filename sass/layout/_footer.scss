@@ -1,0 +1,64 @@
+@use '../base';
+
+footer{
+  color: #fff;
+  margin-top: 20px;
+
+  nav{
+    background-color: map-get(base.$footer, 'nav-color');
+    padding: 25px 0 35px;
+  }
+
+  .main-list{
+    display: flex;
+
+    li ul li{
+      transition: transform .3s; /* Animation */
+      &:hover{
+        transform: scale(1.2);
+      }
+    }
+
+    &>li{
+      flex: 1 auto;
+      color: #dddddd;
+      font-size: 20px;
+      padding: 0 10px;
+      div{
+        padding-bottom: 15px;
+      }
+      li{
+        font-size: 14px;
+        border-bottom: 1px solid rgba(221,221,221,0.1);
+      }
+
+      a{
+        text-decoration: none;
+        color: #ddd;
+      }
+    }
+  }
+
+  .payment-list{
+    padding: 10px 0;
+    li{
+      @include base.list-reset;
+    }
+  }
+
+  .payment-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: map-get(base.$footer, 'payment-info-color');
+    padding-top: 30px;
+
+    .privacy{
+      width: 100%;
+      text-align: center;
+      border-top: 1px solid rgba(221,221,221,0.1);
+      padding: 15px 0;
+    }
+  }
+}

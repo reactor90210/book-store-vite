@@ -1,0 +1,6 @@
+@use 'base';
+
+body{
+  font-family: base.$main-font;
+  min-width: 1000px;
+}
